@@ -1,0 +1,32 @@
+[
+  {
+    "netID": "jbb294",
+    "itemsFound": 0,
+    "itemsLost": 1,
+    "phoneNumber": null
+  },
+  {
+    "netID": "mra200",
+    "itemsFound": 3,
+    "itemsLost": 2,
+    "phoneNumber": 1234567890
+  },
+  {
+    "netID": "tjs45",
+    "itemsFound": 1,
+    "itemsLost": 0,
+    "phoneNumber": 2345678901
+  },
+  {
+    "netID": "lkb56",
+    "itemsFound": 2,
+    "itemsLost": 1,
+    "phoneNumber": 3456789012
+  },
+  {
+    "netID": "scq91",
+    "itemsFound": 0,
+    "itemsLost": 3,
+    "phoneNumber": null
+  }
+]

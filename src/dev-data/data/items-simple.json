@@ -1,0 +1,35 @@
+[
+  {
+    "item": "AirPods",
+    "type": "Headphones",
+    "location": "Central",
+    "color": "white",
+    "room": null,
+    "dateFound": "2023-11-22T00:00:00.000Z",
+    "claimed": false,
+    "images": ["airpods.jpg"],
+    "uniqueDescriptors": "Scratch on the front of the case."
+  },
+  {
+    "item": "Hat",
+    "type": "Cloths",
+    "location": "North Campus",
+    "color": "white",
+    "room": 517,
+    "dateFound": "2023-10-21T00:00:00.000Z",
+    "claimed": false,
+    "images": ["nike-hat.jpg"],
+    "uniqueDescriptors": "Green hat with a Nike logo."
+  },
+  {
+    "item": "Student ID Card",
+    "type": "Identification",
+    "location": "West Campus",
+    "color": "white",
+    "room": null,
+    "dateFound": "2023-11-22T00:00:00.000Z",
+    "claimed": false,
+    "images": [],
+    "uniqueDescriptors": null
+  }
+]
