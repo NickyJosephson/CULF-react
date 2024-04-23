@@ -1,0 +1,66 @@
+.nav{
+    background-color: #ff5047;
+    color: white;
+    display: flex;
+    align-items: stretch;
+    gap: 2rem;
+    padding: 5px;
+    border-radius: 15px;    
+}
+.nav-link {
+    color: inherit;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: .25rem;
+    text-decoration: none; /* to remove underline */
+}
+.nav-right {
+    margin-left: auto;
+    display: flex;
+}
+
+.dropbtn {
+    background-color: inherit; /* Match navbar color */
+    color: white; /* Match text color */
+    padding: .25rem; /* Match padding */
+    font-size: 1rem; /* Match font size if you have one set for nav links */
+    border: none; /* Remove borders */
+    cursor: pointer; /* Pointer cursor on hover */
+    height: 100%; /* Full height of the nav */
+    display: flex; /* To center content */
+    align-items: center; /* Align vertically */
+}
+
+.nav-link:hover{
+    background-color: grey;
+  }
+.dropdown{
+    position: relative;
+    display: inline-block;
+}
+.dropdown:hover{
+    background-color: grey; 
+}
+.dropdown-content {
+    position: absolute;
+    min-width: 160px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+  /* Show the dropdown menu when dropdown is toggled */
+.show-dropdown .dropdown-content {
+    display: block;
+}
+  /* Additional styling for the dropdown links to match the navbar links */
+.dropdown-content .nav-link {
+    background-color: #ff5047; /* Match navbar color */
+    color: white;
+    padding: 0.5rem 1rem; /* Spacing within dropdown items */
+    border: none; /* Remove any borders */
+}
+  
+.dropdown-content .nav-link:hover {
+    background-color: grey; /* Hover state for dropdown items */
+}

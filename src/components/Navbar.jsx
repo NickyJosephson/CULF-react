@@ -1,46 +1,30 @@
-import React from 'react';
-import { Link } from "react-router-dom"
+import React, { useEffect, useState } from 'react';
+import { NavLink, useLocation} from "react-router-dom"
+import './NavBar.css'
+import Dropdown from 'react-bootstrap/Dropdown';
 
-// export default function Navbar() {
-//   return (
-//     <nav className="nav">
-//       <Link to="/" className="CULF">
-//         CULF
-//       </Link>
-//       <Link to="/items" className="items">Items</Link>
-//       <Link to="/map" className="map">Map</Link>
-//       {/* <ul>
-//         <CustomLink to="/items">Items</CustomLink>
-//         <CustomLink to="/map">Map</CustomLink>
-//       </ul> */}
-//     </nav>
-//   )
-// }
 export default function Navbar(){
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
+
   return (    
-      <nav className='nav'>
-          <div className='CULF'>
-              <Link to="/">CULF</Link>
+      <div className='nav'>
+          <NavLink to="/" className='nav-link'>CULF</NavLink>
+          {/* <NavLink to="/items" className='nav-link' >Items</NavLink> */}
+          <div className="dropdown">
+            <button onClick={toggleDropdown} className="dropbtn">Lost Items</button>
+            {isDropdownOpen && (
+              <div className="dropdown-content">
+                <NavLink onClick={toggleDropdown} to="/items/report" className='nav-link'>Report</NavLink>
+                <NavLink onClick={toggleDropdown} to="/items/view" className='nav-link'>View</NavLink>
+                <NavLink onClick={toggleDropdown} to="/items/map" className='nav-link'>Map</NavLink>
+              </div>
+            )}
           </div>
-          <div className='items'>
-              <Link to="/items">Items</Link>
+          <div class="nav-right"> 
+            <NavLink to="/login" className='nav-link'>Login</NavLink>
+            <NavLink to="/register" className='nav-link'>Register</NavLink>
+          </div>
       </div>
-          <div className='map'>
-              <Link to="/map">Map</Link>
-          </div>
-      </nav>
   )
 }
-
-// function CustomLink({ to, children, ...props }) {
-//   const resolvedPath = useResolvedPath(to)
-//   const isActive = useMatch({ path: resolvedPath.pathname, end: true })
-
-//   return (
-//     <li className={isActive ? "active" : ""}>
-//       <Link to={to} {...props}>
-//         {children}
-//       </Link>
-//     </li>
-//   )
-// }

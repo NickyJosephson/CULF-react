@@ -1,0 +1,40 @@
+/* LoginPage.css */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.form {
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #ff5047;
+    text-align: center;
+    width: 300px;
+}
+
+.inputGroup {
+    margin: 10px 0;
+}
+
+.input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+.button {
+    width: 100%;
+    padding: 10px;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.message {
+    color: white;
+}

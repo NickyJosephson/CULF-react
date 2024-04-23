@@ -1,21 +1,26 @@
 import Navbar from './components/Navbar'
-import Home from './pages/Home'
-import Items from './pages/Items'
-import Map from './pages/Map'
-import './App.css'
-import { Route, Routes } from "react-router-dom"
+import HomePage from './pages/Home'
+import ItemsPage from './pages/Items'
+import MapPage from './pages/Map'
+import ReportPage from './pages/Report'
+import LoginPage from './pages/Login'
+import RegisterPage from './pages/Register'
 
+import './App.css'
+import { Route, Routes, Router } from "react-router-dom"
+import React from 'react';
 function App() {
   return (
     <>
-      <Navbar />
-      <div className="container">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/items" element={<Items />} />
-          <Route path="/map" element={<Map />} />
-        </Routes>
-      </div>
+      <Navbar/>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/items/view" element={<ItemsPage />} />
+        <Route path="/items/report" element={<ReportPage />} />
+        <Route path="/items/map" element={<MapPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+      </Routes>
     </>
   )
 }
