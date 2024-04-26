@@ -38,6 +38,7 @@ export default function ReportPage() {
                     type="text"
                     id="itemName"
                     name="itemName"
+                    placeholder="Item Name"
                     value={formData.itemName}
                     onChange={handleChange}
                     required
@@ -47,6 +48,7 @@ export default function ReportPage() {
                     type="text"
                     id="location"
                     name="location"
+                    placeholder="Location"
                     value={formData.location}
                     onChange={handleChange}
                     required
@@ -56,6 +58,7 @@ export default function ReportPage() {
                 <textarea
                     id="description"
                     name="description"
+                    placeholder="Description"
                     value={formData.description}
                     onChange={handleChange}
                     required

@@ -21,7 +21,6 @@
 }
 
 .dropbtn {
-    background-color: inherit; /* Match navbar color */
     color: white; /* Match text color */
     padding: .25rem; /* Match padding */
     font-size: 1rem; /* Match font size if you have one set for nav links */
@@ -33,15 +32,17 @@
 }
 
 .nav-link:hover{
-    background-color: grey;
-  }
+    opacity:.5;
+}
 .dropdown{
     position: relative;
     display: inline-block;
 }
-.dropdown:hover{
-    background-color: grey; 
+.dropbtn:hover{
+    color:none;
+    opacity: .5;
 }
+
 .dropdown-content {
     position: absolute;
     min-width: 160px;
@@ -62,5 +63,5 @@
 }
   
 .dropdown-content .nav-link:hover {
-    background-color: grey; /* Hover state for dropdown items */
+    opacity:.5;
 }
