@@ -11,8 +11,14 @@
     padding: 20px;
     border-radius: 5px;
     background-color: #ff5047;
-    text-align: center;
-    width: 300px;
+    text-align: left;
+    width: 400px;
+}
+.error-message {
+    font-size: 12px;
+    font-weight: 500;
+    color: black;
+    margin-top: -5px
 }
 
 .inputGroup {
@@ -23,6 +29,13 @@
     width: 100%;
     padding: 10px;
     margin: 5px 0;
+}
+.input[type=password]{
+    background-color:white;
+    color:black;
+    border:none;
+    border-radius: 5px;
+    margin: 10px 0;
 }
 
 .button {

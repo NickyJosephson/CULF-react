@@ -25,6 +25,13 @@
     margin: 5px 0;
 }
 
+.input[type=password]{
+    background-color:white;
+    color:black;
+    border:none;
+    border-radius: 5px;
+}
+
 .button {
     width: 100%;
     padding: 10px;

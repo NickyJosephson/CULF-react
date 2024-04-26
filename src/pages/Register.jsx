@@ -1,47 +1,95 @@
-import React, { useState } from 'react';
-import './Register.css'; // Import the CSS file
+import React, { useState } from "react";
+import useForm from "../api/Authentication.js";
+import "./Register.css"; // Import the CSS file
 
 export default function RegisterPage() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [message, setMessage] = useState('');
-
-  const handleSubmit = (event) => {
-    event.preventDefault(); // Prevent the form from submitting naturally
-    // Simple validation example
-    if (!username || !password) {
-      setMessage('Both fields are required!');
-    } else {
-      setMessage('Login successful!');
-      // You can add more logic here for authentication
+    const [message, setMessage] = useState("");
+    const [formError, setFormError] = useState("");
+    const validateForm = (data) => {
+        if (!data.email.toLowerCase().includes("@cornell.edu")){
+            setFormError({
+                email:"You must use a cornell email"
+            })
+            return false;
+        } else if (data.password != data.cpassword) {
+            setFormError({
+                cpassword:"Password must match"
+            });
+            return false;
+        } else {
+            return true;
+        }
     }
-  };
-
-  return (
-      <form className="form" onSubmit={handleSubmit}>
-        <h2 style={{color: 'white'}}>Register</h2>
-        {message && <p className="message">{message}</p>}
-        <div className="inputGroup">
-          <label htmlFor="username">Username:</label>
-          <input
-            type="text"
-            id="username"
-            className="input"
-            value={username}
-            onChange={e => setUsername(e.target.value)}
-          />
-        </div>
-        <div className="inputGroup">
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            id="password"
-            className="input"
-            value={password}
-            onChange={e => setPassword(e.target.value)}
-          />
-        </div>
-        <button type="submit" className="button">Login</button>
-      </form>
-  );
-};
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const data = Array.from(e.target.elements)
+            .filter((input) => input.name)
+            .reduce(
+                (obj, input) =>
+                    Object.assign(obj, { [input.name]: input.value }),
+                {}
+            );
+        if (validateForm(data)){
+            return;
+        } else {
+            return;
+        }
+        
+    }
+    return (
+        <form className="form" onSubmit={handleSubmit}>
+            <h2 style={{ color: "white" }}>Register</h2>
+            {message && <p className="message">{message}</p>}
+            <div className="inputGroup">
+                <label>Name:</label>
+                <input
+                    type="text"
+                    className="input"
+                    name="name"
+                    required
+                />
+            </div>
+            <div className="inputGroup">
+                <label>Cornell Email:</label>
+                <input
+                    type="text"
+                    className="input"
+                    name="email"
+                    required
+                />
+                <p className="error-message">{formError.email}</p>
+            </div>
+            <div className="inputGroup">
+                <label>Phone Number:</label>
+                <input
+                    type="text"
+                    className="input"
+                    name="phone"
+                    required
+                />
+            </div>
+            <div className="inputGroup">
+                <label>Password:</label>
+                <input
+                    type="password"
+                    className="input"
+                    name="password"
+                    required
+                />
+            </div>
+            <div className="inputGroup">
+                <label>Confirm Password:</label>
+                <input
+                    type="password"
+                    className="input"
+                    name="cpassword"
+                    required
+                />
+                <p className="error-message">{formError.cpassword}</p>
+            </div>
+            <button type="submit" className="button">
+                Register
+            </button>
+        </form>
+    );
+}
