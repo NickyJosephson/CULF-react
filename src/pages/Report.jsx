@@ -31,9 +31,9 @@ export default function ReportPage() {
     };
     return (
         <div>
-            <h2 style={{color: 'black'}}>Report Lost Item</h2>
             <form onSubmit={handleSubmit}>
-                <label htmlFor="itemName">Item Name:</label>
+                <h1 style={{ color: "#ff5047", textAlign: "center"}}>Report a Lost Item</h1>
+                <label>Item Name:</label>
                 <input
                     type="text"
                     id="itemName"
@@ -42,7 +42,7 @@ export default function ReportPage() {
                     onChange={handleChange}
                     required
                 />
-                <label htmlFor="location">Last Seen Location:</label>
+                <label>Last Seen Location:</label>
                 <input
                     type="text"
                     id="location"
@@ -52,21 +52,11 @@ export default function ReportPage() {
                     required
                 />
                 <LocationPicker onLocationSelect={handleLocationSelect} />
-                <label htmlFor="description">Description:</label>
+                <label>Description:</label>
                 <textarea
                     id="description"
                     name="description"
                     value={formData.description}
-                    onChange={handleChange}
-                    required
-                />
-
-                <label htmlFor="contactEmail">Your Contact Email:</label>
-                <input
-                    type="email"
-                    id="contactEmail"
-                    name="contactEmail"
-                    value={formData.contactEmail}
                     onChange={handleChange}
                     required
                 />

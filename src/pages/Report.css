@@ -1,25 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
 form {
-    max-width: 500px;
     margin: 2rem auto;
-    padding: 2rem;
-    background-color: #ff5047;
-    color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    font-family: 'Poppins', 'sans-serif';
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #f1f5f9;
+    box-shadow: none;
+    color: #ff5047;
+    text-align: left;
+    width: 600px;
 }
 
-form h2 {
-    text-align: center;
-    margin-bottom: 2rem;
+input {
+    background-color: #f9f9f9;
+    color: black;
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border:none;
+    outline:none
 }
 
-form label {
-    display: block;
-    margin-bottom: 0.5rem;
-}
 
-form input[type="text"],
-form input[type="email"],
 form textarea {
     width: 100%;
     padding: 0.5rem;
@@ -35,50 +39,24 @@ form textarea {
     resize: vertical; /* Allows the user to resize the textarea vertically */
 }
 
-form button {
-    padding: 0.5rem 1rem;
-    background-color: black; /* Same as your active link color */
+button {
+    font-family: 'Poppins', 'sans-serif';
+    width: 100%;
+    padding: 10px;
+    background-color: #ff5047;
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
-    display: block; /* Full width */
-    width: 100%;
-    margin-top: 1rem;
+}
+button:hover{
+    color: #ff5047;
+    background-color: white;
 }
 
-form button:hover {
-    background-color: #037a54; /* A darker shade for hover state */
-}
 
-/* When the user clicks on the button, focus the first input field */
-form button:focus {
-    outline: none; /* Removes the default outline */
-}
-
-/* Placeholder color */
-form input::placeholder,
-form textarea::placeholder {
-    color: #666;
-}
-
-/* Remove input and button styles on iOS */
-form input[type="text"],
-form input[type="email"],
-form button {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-}
 
 /* Style focus state for inputs and textarea */
-form input[type="text"]:focus,
-form input[type="email"]:focus,
-form textarea:focus {
-    outline: none;
-    border-color: #04AA6D;
-    box-shadow: 0 0 0 2px rgba(4, 170, 109, 0.2);
-}
 /* Map container style to match the form */
 .leaflet-container {
     border-radius: 8px;
@@ -86,12 +64,5 @@ form textarea:focus {
     height: 400px; /* Set to desired value */
     width: 100%;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  }
-  
-  /* Style for the location input that gets populated with the lat/lng */
-  #location {
-    background-color: #f9f9f9; /* Light background for visibility */
-    color: black; /* Color for visibility */
-    border: 1px solid #ccc; /* Light border for distinction */
-  }
+}
   

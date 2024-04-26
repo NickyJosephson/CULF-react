@@ -38,14 +38,15 @@ export default function RegisterPage() {
     }
     return (
         <form className="form" onSubmit={handleSubmit}>
-            <h2 style={{ color: "white" }}>Register</h2>
+            <h2 style={{ color: "#ff5047", textAlign: "left"}}>Register</h2>
             {message && <p className="message">{message}</p>}
             <div className="inputGroup">
                 <label>Name:</label>
                 <input
                     type="text"
-                    className="input"
+                    class="input"
                     name="name"
+                    placeHolder="Enter name"
                     required
                 />
             </div>
@@ -53,8 +54,9 @@ export default function RegisterPage() {
                 <label>Cornell Email:</label>
                 <input
                     type="text"
-                    className="input"
+                    class="input"
                     name="email"
+                    placeHolder="Enter email address"
                     required
                 />
                 <p className="error-message">{formError.email}</p>
@@ -63,8 +65,9 @@ export default function RegisterPage() {
                 <label>Phone Number:</label>
                 <input
                     type="text"
-                    className="input"
+                    class="input"
                     name="phone"
+                    placeHolder="Enter phone number"
                     required
                 />
             </div>
@@ -72,8 +75,9 @@ export default function RegisterPage() {
                 <label>Password:</label>
                 <input
                     type="password"
-                    className="input"
+                    class="input"
                     name="password"
+                    placeHolder="Enter password"
                     required
                 />
             </div>
@@ -83,6 +87,7 @@ export default function RegisterPage() {
                     type="password"
                     className="input"
                     name="cpassword"
+                    placeHolder="Enter password"
                     required
                 />
                 <p className="error-message">{formError.cpassword}</p>

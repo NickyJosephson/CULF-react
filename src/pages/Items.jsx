@@ -91,9 +91,9 @@ export default function ItemsPage() {
         setToken(token);
     });
 	// Check login token, if not logged in then redirect to login page
-    if (!token) {
-        return navigate("/login");
-    }
+    // if (!token) {
+    //     return navigate("/login");
+    // }
 
     return (
         <div>

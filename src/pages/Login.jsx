@@ -19,7 +19,7 @@ export default function LoginPage() {
 
   return (
       <form className="form" onSubmit={handleSubmit}>
-        <h2 style={{color: 'white'}}>Login</h2>
+        <h2 style={{color: '#ff5047', textAlign: "left"}}>Login</h2>
         {message && <p className="message">{message}</p>}
         <div className="inputGroup">
           <label htmlFor="username">Username:</label>

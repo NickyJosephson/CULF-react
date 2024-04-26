@@ -1,16 +1,20 @@
-/* LoginPage.css */
+/* RegisterPage.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f0f0f0;
 }
 
 .form {
+    font-family: 'Poppins', 'sans-serif';
     padding: 20px;
     border-radius: 5px;
-    background-color: #ff5047;
+    background-color: #f1f5f9;
+    box-shadow: none;
+    color: #ff5047;
     text-align: left;
     width: 400px;
 }
@@ -29,6 +33,12 @@
     width: 100%;
     padding: 10px;
     margin: 5px 0;
+    border:none;
+    outline:none
+}
+.input:focus{
+    outline:none;
+    border:none;
 }
 .input[type=password]{
     background-color:white;
@@ -38,14 +48,26 @@
     margin: 10px 0;
 }
 
+::placeholder{
+    font-size: 12px;
+    font-weight: 400;
+    opacity:1;
+    color: #e8e8e8;
+}
+
 .button {
+    font-family: 'Poppins', 'sans-serif';
     width: 100%;
     padding: 10px;
-    background-color: white;
-    color: black;
+    background-color: #ff5047;
+    color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+.button:hover{
+    color: #ff5047;
+    background-color: white;
 }
 
 .message {
