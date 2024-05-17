@@ -1,7 +1,7 @@
 import Navbar from './components/Navbar'
 import HomePage from './pages/Home'
 import ItemsPage from './pages/Items'
-import MapPage from './pages/Map'
+import ClaimPage from './pages/Claim'
 import ReportPage from './pages/Report'
 import LoginPage from './pages/Login'
 import RegisterPage from './pages/Register'
@@ -17,7 +17,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/items/view" element={<ItemsPage />} />
         <Route path="/items/report" element={<ReportPage />} />
-        <Route path="/items/map" element={<MapPage />} />
+        <Route path="/items/claim" element={<ClaimPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
       </Routes>

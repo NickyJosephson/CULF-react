@@ -17,7 +17,7 @@ export default function Navbar(){
               <div className="dropdown-content">
                 <NavLink onClick={toggleDropdown} to="/items/report" className='nav-link'>Report</NavLink>
                 <NavLink onClick={toggleDropdown} to="/items/view" className='nav-link'>View</NavLink>
-                <NavLink onClick={toggleDropdown} to="/items/map" className='nav-link'>Map</NavLink>
+                <NavLink onClick={toggleDropdown} to="/items/claim" className='nav-link'>Claim</NavLink>
               </div>
             )}
           </div>
