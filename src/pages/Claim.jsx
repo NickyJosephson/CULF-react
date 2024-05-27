@@ -4,10 +4,8 @@ import "./Report.css";
 
 export default function Claim() {
     const [formData, setFormData] = useState({
-      itemName: "",
-      location: "",
+      itemID: "",
       description: "",
-      contactEmail: "",
   });
   const handleChange = (e) => {
       const { name, value } = e.target;
@@ -26,14 +24,14 @@ export default function Claim() {
       <div>
           <form onSubmit={handleSubmit}>
               <h1 style={{ color: "#ff5047", textAlign: "center"}}>Report a Lost Item</h1>
-              <h5 style={{textAlign: "center"}}>Submit the item nubmer and we'll connect you with the student who has the item</h5>
+              <h5 style={{textAlign: "center"}}>Submit the item number and we'll connect you with the student who has the item</h5>
               <label>Item ID:</label>
               <input
                   type="text"
                   id="imemID"
                   name="itemID"
                   placeholder="Item ID"
-                  value={formData.itemName}
+                  value={formData.itemID}
                   onChange={handleChange}
                   required
               />

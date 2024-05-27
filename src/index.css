@@ -22,3 +22,16 @@ body {
   margin: 1rem;
   text-align: center;
 }
+
+*{
+  animation: fade-in .5s;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100;
+  }
+}

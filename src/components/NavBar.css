@@ -1,6 +1,6 @@
 .nav{
     background-color: #ff5047;
-    color: white;
+    color: black;
     display: flex;
     align-items: stretch;
     gap: 2rem;
@@ -21,7 +21,7 @@
 }
 
 .dropbtn {
-    color: white; /* Match text color */
+    color: black; /* Match text color */
     padding: .25rem; /* Match padding */
     font-size: 1rem; /* Match font size if you have one set for nav links */
     border: none; /* Remove borders */

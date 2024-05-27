@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.faq-container {
+    margin: 2rem auto;
+    font-family: 'Poppins', 'sans-serif';
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #f1f5f9;
+    box-shadow: none;
+    color: #ff5047;
+    text-align: left;
+    width: 600px;
+  }
+  
+  
+  /* FAQ Items */
+  .faq-item {
+    border-bottom: 1px solid #ccc;
+    padding: 20px 0;
+  }
+  
+  /* Question */
+  .question {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333; /* Question text color */
+  }
+  
+  /* Answer */
+  .answer {
+    font-size: 16px;
+    color: #666; /* Answer text color */
+  }
+  
+  

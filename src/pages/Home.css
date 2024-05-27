@@ -7,10 +7,11 @@
     background-size: cover;
 }
 .title {
-    font-size: 48px;
+    font-size: 96px;
     font-weight: bold;
     color: black;
 }
 .tagline {
     color: black;
+    font-size: 200%;
 }
