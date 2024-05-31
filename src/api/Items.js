@@ -1,11 +1,5 @@
 import axios from 'axios';
 
-export default async function getItems(){
-    await axios.get('https://jsonplaceholder.typicode.com/posts')
-      .then(response => {
-        return response;
-      })
-      .catch(error => {
-        console.error(error);
-      });
+export async function getItems(){
+    return await resolve(axios.get(`${process.env.REACT_APP_BASE_URL}/api/v1/items`));
 }

@@ -1,5 +1,6 @@
 import react, { useState } from "react";
-
+import axios from 'axios';
+import resolve from 'resolve';
 export default function useForm({ additionalData }) {
     const [status, setStatus] = useState("");
     const [message, setMessage] = useState("");
@@ -41,4 +42,23 @@ export default function useForm({ additionalData }) {
     };
 
     return { handleSubmit, status, message, formError };
+}
+
+export default async function login(body){
+    const token = localStorage.getItem("jwt-token");
+    return resolve(axios.post(
+        `${process.env.REACT_APP_BASE_URL}api/v1/users/login`,
+        {"headers": {
+            "jwt-token":token
+        }},
+        JSON.stringify(body)
+    ))
+}
+
+export default async function signup(body){
+    return resolve(axios.post(`${process.env.REACT_APP_BASE_URL}api/v1/users/signup`,body))
+}
+
+export default async function forgotPassword(body){
+    return resolve(axios.post(`${process.env.REACT_APP_BASE_URL}api/v1/users/forgotPassword`,body))
 }

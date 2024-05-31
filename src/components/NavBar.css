@@ -21,27 +21,27 @@
 }
 
 .dropbtn {
-    color: black; /* Match text color */
-    padding: .25rem; /* Match padding */
-    font-size: 1rem; /* Match font size if you have one set for nav links */
-    border: none; /* Remove borders */
-    cursor: pointer; /* Pointer cursor on hover */
-    height: 100%; /* Full height of the nav */
-    display: flex; /* To center content */
-    align-items: center; /* Align vertically */
+    font-size: 1rem;
+    color: inherit;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: .25rem 30px;
+    text-decoration: none; /* to remove underline */
 }
 
 .nav-link:hover{
     opacity:.5;
 }
+
+.dropbtn:hover{
+    opacity: .5;
+}
 .dropdown{
     position: relative;
     display: inline-block;
 }
-.dropbtn:hover{
-    color:none;
-    opacity: .5;
-}
+
 
 .dropdown-content {
     position: absolute;
@@ -57,7 +57,7 @@
   /* Additional styling for the dropdown links to match the navbar links */
 .dropdown-content .nav-link {
     background-color: #ff5047; /* Match navbar color */
-    color: white;
+    color: black;
     padding: 0.5rem 1rem; /* Spacing within dropdown items */
     border: none; /* Remove any borders */
 }

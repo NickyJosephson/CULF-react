@@ -5,63 +5,6 @@ import ReactDataGrid from "@inovua/reactdatagrid-community";
 import "@inovua/reactdatagrid-community/index.css";
 import "./Items.css";
 
-const demoItems = [
-    {
-        item: "AirPods",
-        type: "Headphones",
-        location: "Central",
-        color: "white",
-        room: null,
-        dateFound: "2023-11-22T00:00:00.000Z",
-        claimed: false,
-        images: ["airpods.jpg"],
-        uniqueDescriptors: "Scratch on the front of the case.",
-    },
-    {
-        item: "Hat",
-        type: "Cloths",
-        location: "North Campus",
-        color: "white",
-        room: 517,
-        dateFound: "2023-10-21T00:00:00.000Z",
-        claimed: false,
-        images: ["nike-hat.jpg"],
-        uniqueDescriptors: "Green hat with a Nike logo.",
-    },
-    {
-        item: "Student ID Card",
-        type: "Identification",
-        location: "West Campus",
-        color: "white",
-        room: null,
-        dateFound: "2023-11-22T00:00:00.000Z",
-        claimed: false,
-        images: [],
-        uniqueDescriptors: null,
-    },
-    {
-        item: "Student ID Card",
-        type: "Identification",
-        location: "West Campus",
-        color: "white",
-        room: null,
-        dateFound: "2023-11-22T00:00:00.000Z",
-        claimed: false,
-        images: [],
-        uniqueDescriptors: null,
-    },
-    {
-        item: "Student ID Card",
-        type: "Identification",
-        location: "West Campus",
-        color: "white",
-        room: null,
-        dateFound: "2023-11-22T00:00:00.000Z",
-        claimed: false,
-        images: [],
-        uniqueDescriptors: null,
-    },
-];
 const columns = [
     { name: "item", header: "Item", minWidth: 150, defaultFlex: 1 },
     { name: "type", header: "Type", minWidth: 150, defaultFlex: 1 },
@@ -82,12 +25,14 @@ const filterValue = [
 ];
 export default function ItemsPage() {
     const [token, setToken] = useState("");
+    const [data,setData] = useState("");
     const navigate = useNavigate();
 
     const gridStyle = {};
 
     useEffect(() => {
         const token = localStorage.getItem("jwt-token");
+    
         setToken(token);
     });
 	// Check login token, if not logged in then redirect to login page
@@ -112,7 +57,7 @@ export default function ItemsPage() {
                         idProperty="id"
                         columns={columns}
                         style={gridStyle}
-                        dataSource={demoItems}
+                        dataSource={data}
                         defaultFilterValue={filterValue}
                         pagination={true}
                     />
