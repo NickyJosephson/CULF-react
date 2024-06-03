@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import {useNavigate} from 'react-router-dom'
 import "leaflet/dist/leaflet.css";
 import "./Report.css";
 
 export default function Claim() {
+    const navigate = useNavigate();
+
     const [formData, setFormData] = useState({
       itemID: "",
       description: "",
@@ -20,6 +23,12 @@ export default function Claim() {
       console.log(formData);
       alert("Form submitted. Please check the console for the form data.");
   };
+  useEffect(() =>{
+    const token = localStorage.getItem("jwt-token");
+    if (!token) {
+        navigate("/login");
+    }
+  })
   return (
       <div>
           <form onSubmit={handleSubmit}>

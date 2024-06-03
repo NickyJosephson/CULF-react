@@ -13,6 +13,7 @@
     "@inovua/reactdatagrid-community": "^5.10.2",
     "@inovua/reactdatagrid-enterprise": "^5.10.2",
     "axios": "^1.6.8",
+    "dotenv": "^16.4.5",
     "leaflet": "^1.9.4",
     "mdb-react-ui-kit": "^8.0.0",
     "react": "^18.2.0",

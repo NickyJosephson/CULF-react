@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import ReactDataGrid from "@inovua/reactdatagrid-community";
 import "@inovua/reactdatagrid-community/index.css";
 import "./Items.css";
+import {getItems} from '../api/Items'
 
 const columns = [
     { name: "item", header: "Item", minWidth: 150, defaultFlex: 1 },
@@ -32,13 +33,16 @@ export default function ItemsPage() {
 
     useEffect(() => {
         const token = localStorage.getItem("jwt-token");
-    
         setToken(token);
+        if (!token) {
+            navigate("/login");
+        } else {
+            const data = getItems();
+            if (data.data != null ){
+                setData(JSON.parse(data.body))
+            } 
+        }
     });
-	// Check login token, if not logged in then redirect to login page
-    // if (!token) {
-    //     return navigate("/login");
-    // }
 
     return (
         <div>

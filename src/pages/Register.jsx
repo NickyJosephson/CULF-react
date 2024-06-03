@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import useForm from "../api/Authentication.js";
 import "./Register.css"; // Import the CSS file
+import {signup} from '../api/Authentication.js'
 
 export default function RegisterPage() {
     const [message, setMessage] = useState("");
@@ -20,7 +21,7 @@ export default function RegisterPage() {
             return true;
         }
     }
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         const data = Array.from(e.target.elements)
             .filter((input) => input.name)
@@ -30,8 +31,18 @@ export default function RegisterPage() {
                 {}
             );
         if (validateForm(data)){
-            return;
+            await signup({
+                netID: data.netid,
+                email: data.email,
+                name: data.name,
+                password: data.password,
+                passwordConfirm: data.cpassword,
+                accountCreated: "2024-04-21T00:00:00.000Z",
+                itemsFound: 0,
+                itemsLost: 0
+            })
         } else {
+            console.log('error handling registration');
             return;
         }
         
@@ -47,6 +58,16 @@ export default function RegisterPage() {
                     class="input"
                     name="name"
                     placeHolder="Enter name"
+                    required
+                />
+            </div>
+            <div className="inputGroup">
+                <label>NetID:</label>
+                <input
+                    type="text"
+                    class="input"
+                    name="netid"
+                    placeHolder="Enter Netid"
                     required
                 />
             </div>

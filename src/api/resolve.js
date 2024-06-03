@@ -1,4 +1,4 @@
-export default async function resolve(promise) {
+export async function resolve(promise) {
     const resolved = {
         data: null,
         error: null,

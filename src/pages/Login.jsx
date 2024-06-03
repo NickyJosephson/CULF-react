@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Login.css'; // Import the CSS file
+import {login} from '../api/Authentication.js'
 
 export default function LoginPage() {
   const [username, setUsername] = useState('');
@@ -12,8 +13,11 @@ export default function LoginPage() {
     if (!username || !password) {
       setMessage('Both fields are required!');
     } else {
+      login({
+        email: username,
+        password: password
+      })
       setMessage('Login successful!');
-      // You can add more logic here for authentication
     }
   };
 
