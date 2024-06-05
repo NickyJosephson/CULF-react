@@ -1,26 +1,28 @@
 import React, { useState } from "react";
 import useForm from "../api/Authentication.js";
 import "./Register.css"; // Import the CSS file
-import {signup} from '../api/Authentication.js'
+import { signup } from "../api/Authentication.js";
+import { useNavigate } from "react-router-dom";
 
 export default function RegisterPage() {
     const [message, setMessage] = useState("");
     const [formError, setFormError] = useState("");
+    const navigate = useNavigate();
     const validateForm = (data) => {
-        if (!data.email.toLowerCase().includes("@cornell.edu")){
+        if (!data.email.toLowerCase().includes("@cornell.edu")) {
             setFormError({
-                email:"You must use a cornell email"
-            })
+                email: "You must use a cornell email",
+            });
             return false;
         } else if (data.password != data.cpassword) {
             setFormError({
-                cpassword:"Password must match"
+                cpassword: "Password must match",
             });
             return false;
         } else {
             return true;
         }
-    }
+    };
     const handleSubmit = async (e) => {
         e.preventDefault();
         const data = Array.from(e.target.elements)
@@ -30,7 +32,7 @@ export default function RegisterPage() {
                     Object.assign(obj, { [input.name]: input.value }),
                 {}
             );
-        if (validateForm(data)){
+        if (validateForm(data)) {
             await signup({
                 netID: data.netid,
                 email: data.email,
@@ -39,18 +41,23 @@ export default function RegisterPage() {
                 passwordConfirm: data.cpassword,
                 accountCreated: "2024-04-21T00:00:00.000Z",
                 itemsFound: 0,
-                itemsLost: 0
-            })
+                itemsLost: 0,
+            }).then((r) => {
+                console.log(r)
+                if (!r.error){
+                    navigate("/items/view")
+                } else if (r.error.response.status = 500) {
+                    setMessage("Account already exists")
+                }
+            });
         } else {
-            console.log('error handling registration');
+            console.log("could not validate post form");
             return;
         }
-        
-    }
+    };
     return (
         <form className="form" onSubmit={handleSubmit}>
-            <h2 style={{ color: "#ff5047", textAlign: "left"}}>Register</h2>
-            {message && <p className="message">{message}</p>}
+            <h2 style={{ color: "#ff5047", textAlign: "left" }}>Register</h2>
             <div className="inputGroup">
                 <label>Name:</label>
                 <input
@@ -113,6 +120,7 @@ export default function RegisterPage() {
                 />
                 <p className="error-message">{formError.cpassword}</p>
             </div>
+            {message && <p style={{'color': 'black'}} className="message">{message}</p>}
             <button type="submit" className="button">
                 Register
             </button>

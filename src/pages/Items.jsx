@@ -5,6 +5,8 @@ import ReactDataGrid from "@inovua/reactdatagrid-community";
 import "@inovua/reactdatagrid-community/index.css";
 import "./Items.css";
 import {getItems} from '../api/Items'
+import Cookies from 'js-cookie';
+
 
 const columns = [
     { name: "item", header: "Item", minWidth: 150, defaultFlex: 1 },
@@ -32,17 +34,19 @@ export default function ItemsPage() {
     const gridStyle = {};
 
     useEffect(() => {
-        const token = localStorage.getItem("jwt-token");
-        setToken(token);
-        if (!token) {
-            navigate("/login");
-        } else {
-            const data = getItems();
-            if (data.data != null ){
-                setData(JSON.parse(data.body))
-            } 
+        async function fetchAPI(){
+            const token = Cookies.get('jwt');
+            if (!token) {
+                navigate("/login");
+            } else {
+                const data = await getItems(token);
+                if (data.data != null ){
+                    setData(data.data.data.data.items)
+                } 
+            }
         }
-    });
+        fetchAPI();
+    },[]);
 
     return (
         <div>

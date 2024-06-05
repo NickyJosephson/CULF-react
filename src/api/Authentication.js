@@ -45,10 +45,14 @@ export default function useForm({ additionalData }) {
 }
 
 export async function login(body){
-    const token = localStorage.getItem("jwt-token");
     return await resolve(axios.post(
-        `${process.env.REACT_APP_BASE_URL}api/v1/users/login`,
-        JSON.stringify(body)
+        `${import.meta.env.VITE_BASE_URL}api/v1/users/login`,
+        body,
+        {
+            headers: { 
+                'Content-Type': 'application/json'
+            }
+        }
     ))
 }
 
@@ -56,17 +60,18 @@ export async function signup(body){
     return await resolve(axios.post(
         `${import.meta.env.VITE_BASE_URL}api/v1/users/signup`,
         JSON.stringify(body),
-        {headers: { 
-            'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': '*'
-        }}
+        {
+            headers: { 
+                'Content-Type': 'application/json'
+            }
+        }
     ))
 }
 
 export async function forgotPassword(body){
     return await resolve(axios.post(
         `${import.meta.env.VITE_BASE_URL}/api/v1/users/forgotPassword`,
-        body,
+        JSON.stringify(body),
         {headers: { 
             'Content-Type': 'application/json',
             'Access-Control-Allow-Origin': '*'
